@@ -1,0 +1,140 @@
+
+/* Linha com categorias  */
+
+.destaques__linhas-list {
+    word-wrap: none;
+    margin: 1em auto;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+	width: 90%;
+}
+
+.linha-list__item {
+    display: inline;
+    font-size: 0.8em;
+}
+
+.linha-list__button {
+    display: inline-block;
+    background: none;
+    border: none;
+    margin: auto 0;
+    padding: 1em;
+    font-size: 1.05em;
+}
+
+.linha-list__button:hover a {
+	color: lightsalmon;
+}
+
+.active {
+    border-bottom: 2px solid salmon;
+}
+
+/* Card de produto */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1.3em;
+}
+
+.product__card {
+    flex: 1;
+    position: relative;
+    min-width: 250px;
+    max-width: 280px;
+    font-family: var(--font-paragraph);
+    padding: 1.5em;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.product__button-heart {
+    padding: 1em;
+    margin: 1em;
+    position: absolute;
+    top: 0.3em;
+    left: 0.3em;
+    background-color: lightgray;
+    background: none;
+    border-radius: 50px;
+
+    i {
+        font-size: 1.2em;
+        color: grey;
+    }
+}
+
+.product__image {
+    display: block;
+    height: 150px;
+    width: auto;
+    margin: 1em auto;
+}
+
+.product__label {
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+    padding: 0.5em;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 5px;
+}
+.product__title {
+    font-weight: 600;
+    margin-bottom: 1.15em;
+    font-size: 0.9em;
+}
+
+.product__brand {
+    font-weight: 400;
+    color: darkgray;
+    font-size: 0.9em;
+}
+
+.product__price {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 1.15em;
+}
+
+.product__button-buy {
+    display: block;
+    background: none;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 1em auto;
+    padding: 0.7em 1.2em;
+    font-size: 1em;
+    width: 50%;
+
+}
+.product__text {
+    box-sizing: content-box;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 1.1em;
+}
+.product__wrapper {
+    height: 13em;
+}
+
+/* Responsividade */
+
+@media screen and (min-width: 1024px)
+{
+	.linha-list__item {
+		font-size: 1em;
+	}
+	
+	.destaques__linhas-list {
+		width: 80%;
+	}
+}

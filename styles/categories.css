@@ -1,0 +1,57 @@
+/* Estilo do Swiper */
+:root {
+	--swiper-pagination-bullet-size: 15px;
+	 --swiper-pagination-color: salmon;
+}
+
+.slide-category {
+     margin: 1em;
+     flex-shrink: 1;
+}
+
+.category-picture {
+    width: 170px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px;
+
+    img {
+        height: 100%;
+    }
+
+    h2 {
+        position: absolute;
+        display: inline;
+        left: 0;
+        bottom: 1.3em;
+        width: 50%;
+        font-family: var(--font-logo), sans-serif;
+        font-size: 1.1em;
+        background-color: white;
+        padding: 0.5em 0.5em 0.5em 1em;
+    }
+}
+
+.category-picture:hover {
+	cursor: pointer;
+	filter: contrast(120%);
+}
+
+.swiper-pagination__categories {
+	text-align: center;
+}
+/* Responsividade */
+
+@media screen and (min-width: 1024px)
+{
+    .category-picture {
+		width: 220px;
+		height: 270px;
+		margin: 0;
+    }
+	
+	.wrapper-categories {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+}
