@@ -1,0 +1,51 @@
+ <div linha-produtos="make-b" class="product-grid">
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B52797/c9b5b167-be12-4fb0-86d0-f42d6feaf00f-bot-52797-make-b-bb-sense-multiprotetor-cor-270-330-frontal-01.jpg">
+                <div class="product__wrapper">
+                <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Make-B</h3>
+                    <h3 class="product__title">BB Cream Multiprotetor FPS40 Sense Cor 4 25g </h3>
+                    <p class="product__price">R$69,90</p>
+                    <p class="product__text"> Com pigmentos encapsulados, muda de cor em contato com a pele, além de ter 15 benefícios em 1 só produto. </p>
+                </div>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B55496/688565e4-5e87-4f42-8d5c-1ce55bfb0195-bot-55496-make-b-primer-adapt-laranja-caramelo-frontal-01.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Make-B</h3>
+                    <h3 class="product__title">Primer Facial Skin Adapt Laranja Caramelo 8g </h3>
+                    <p class="product__price">R$67,90</p>
+                    <p class="product__text"> O Creme Acetinado Hidratante Desodorante Corporal Lily Lumière é a combinação ideal de perfumação prolongada com a fragrância marcante e intensa de Lily Lumière.
+                    </div>
+                </p>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B55494/96d2a3f7-44d6-4110-9ba7-25fb0a60d743-bot-55494-make-b-blush-marble-shine-rose-frontal-01.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Make-B</h3>
+                    <h3 class="product__title">Blush Iluminador Marble Shine Rose 8g </h3>
+                    <p class="product__price">R$75,90</p>
+                    <p class="product__text"> Em formato stick, vem na cor marmorizada verde/amarelo, ideal para neutralizar áreas avermelhadas do rosto. </p>
+                </div>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B52798/156585e2-15bc-4bfa-94b8-a82bf6dca947-bot-52798-make-b-bb-sense-multiprotetor-cor-220-260-frontal-01.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Make-B</h3>
+                    <h3 class="product__title">BB Cream Multiprotetor FPS40 Sense Cor 3 25g </h3>
+                    <p class="product__price">R$79,80</p>
+                    <p class="product__text"> Com pigmentos encapsulados, muda de cor em contato com a pele, além de ter 15 benefícios em 1 só produto. </p>
+                </div>    
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+        </div>

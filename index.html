@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Beauty Cosméticos</title>
+
+    <script src="https://kit.fontawesome.com/e676755a76.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header__nav">
+            <div class="header__button mobile">
+                <button class="nav-icon button-menu">
+                    <i class="fa-solid fa-bars fa-xl "></i>
+                </button>
+            </div>
+
+            <ul class="nav-list">
+                <div class="nav-list__header">
+                    <button class="nav-icon button-home">
+                        <a href="index.html">
+                            <i class="fa-solid fa-home fa-xl"></i>
+                        </a>
+                    </button>
+                    <button class="nav-icon button-menu">
+                        <i class="fa-solid fa-x fa-xl "></i>
+                    </button>
+                </div>
+				
+                <div class="nav-list__wrapper">
+                    <li class="nav-list__item">
+                        <a>Novidades</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                    <li class="nav-list__item">
+                        <a>Nossas Marcas</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                    <li class="nav-list__item">
+                        <a>Cabelo</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                    <li class="nav-list__item">
+                        <a>Maquiagem</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                    <li class="nav-list__item">
+                        <a>Fragrâncias</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                    <li class="nav-list__item">
+                        <a>Cuidados de Pele</a>
+                        <i class="fa-solid fa-chevron-right fa-xs"></i>
+                    </li>
+                </div>
+
+                <div class="nav-list__footer">
+                    <li class="nav-list__item">Ajuda</li>
+                </div>
+            </ul>
+            
+            <div class="header__button mobile">
+                <button class="nav-icon button-search">
+                    <i class="fa-solid fa-search fa-xl"></i>
+                </button>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar__field">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" class="search-bar__input" placeholder="Pesquise por uma marca ou produto">
+                </div>
+            </div>
+            
+            <div class="header__button header-logo">
+                <a href="#">
+					<h1>PURE BEAUTY</h1>
+				</a>
+            </div>
+			
+			<ul class="nav-list-desktop__wrapper">
+					<li class="nav-list__item">
+							<a>Novidades</a>
+					</li>
+					<li class="nav-list__item">
+						<a>Nossas Marcas</a>
+					</li>
+					<li class="nav-list__item">
+						<a>Cabelo</a>
+					</li>
+					<li class="nav-list__item">
+						<a>Maquiagem</a>
+					</li>
+					<li class="nav-list__item">
+						<a>Fragrâncias</a>
+					</li>
+					<li class="nav-list__item">
+						<a>Cuidados de Pele</a>
+					</li>
+				</ul>
+				
+            <div class="header__button">
+                <button class="nav-icon button-account">
+                    <i class="fa-solid fa-user fa-xl"></i>
+                </button>
+            </div>
+            <div class="header__button">
+                <button class="nav-icon button-cart">
+                    <i class="fa-solid fa-bag-shopping fa-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-message">
+			<div class="header-message__wrapper">
+				<h2 class="header-message__title">SEMANA DAS UNHAS<h2>
+				<p>6 Esmaltes por apenas R$60</p>
+			</div>
+            
+            <a href="#">Confira!</a>
+        </div>
+    </header>
+    
+    <section class="banner">
+        <!-- Slider main container -->
+        <div class="swiper swiper-banner">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide slide-banner" data-swiper-autoplay="2000">
+                    <img src="./img/banner-1.jpg">
+                    <div class="slide-banner__description">
+                        <h1 class="slide-banner__title">Eau de parfum</h1>
+                        <h1 class="slide-banner__subtitle">Seleção para quem busca sofisticação</h1>
+                        <p class="slide-banenr__text">Está buscando por uma fragrância sofisticada? Então eau de parfum é a melhor opção para você. Vem conhecer nossa seleção de perfumaria. </p>
+                        <button class="slide-banner__button">Saiba Mais <i class="fa-solid fa-chevron-right fa-xs"></i></button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide-banner">
+                    <img src="./img/banner-2.jpg">
+                    <div class="slide-banner__description">
+                        <h1 class="slide-banner__title">Novas fragrâncias</h1>
+                        <h1 class="slide-banner__subtitle">Como é feita a criação de uma nova fragrância </h1>
+                        <p class="slide-banenr__text">Quer saber como uma fragrância é feita? O expert em perfumaria Cesar Veiga contou como funciona o processo de criação de uma fragrâncias.</p>
+                        <button class="slide-banner__button">Saiba Mais <i class="fa-solid fa-chevron-right fa-xs"></i></button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide-banner">
+                    <img src="./img/banner-3.jpg">
+                    <div class="slide-banner__description">
+                        <h1 class="slide-banner__title">Lançamentos 2024</h1>
+                        <h1 class="slide-banner__subtitle">As novidades que chegaram por aqui</h1>
+                        <p class="slide-banenr__text">Quer conhecer um lançamento do Boticário? Confira as últimas novidades que chegaram por aqui e garanta os seus favoritos agora mesmo!</p>
+                        <button class="slide-banner__button">Saiba Mais <i class="fa-solid fa-chevron-right fa-xs"></i></button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide-banner">
+                    <img src="./img/banner-4.jpg">
+                    <div class="slide-banner__description">
+                        <h1 class="slide-banner__title">Dia do Amigo</h1>
+                        <h1 class="slide-banner__subtitle">Sugestões para amigos e amigas </h1>
+                        <p class="slide-banenr__text">Confira as dicas de presentes para seus amigos e faça uma surpresa para quem sempre esteve ao seu lado!</p>
+                        <button class="slide-banner__button">Saiba Mais <i class="fa-solid fa-chevron-right fa-xs"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <section class="categories">
+		<h1 class="section-title">Descubra nossos produtos!</h1>
+            <!-- Slider main container -->
+        <div class="swiper swiper-categories">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper wrapper-categories">
+            <!-- Slides -->
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/novidades.png">
+                    <h2>Novidades</h2>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/perfumaria.png">
+                    <h2 class="category-title">Perfumaria</h2>
+                 </div>   
+            </div>
+
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/skincare.png">
+                    <h2 class="category-title">Skincare</h2>
+                </div>   
+            </div>
+
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/cabelos.png">
+                    <h2 class="category-title">Cabelos</h2>
+                 </div>   
+            </div>
+
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/corpo-banho.png">
+                    <h2 class="category-title">Corpo e Banho</h2>
+                 </div>   
+            </div>
+
+            <div class="swiper-slide slide-category">
+                <div class="category-picture">
+                    <img src="./img/maquiagem.png">
+                    <h2 class="category-title">Maquiagem</h2>
+                 </div>   
+            </div>
+        </div>
+		  <!-- Pagination -->
+		<div class="swiper-pagination__categories"></div>
+    </section>
+
+    <section class="produtos-destaque" id="produtos-destaque">
+        <h1 class="section-title">Confira as novidades!</h2>
+
+        <ul class="destaques__linhas-list">
+            <li class="linha-list__item">
+                <button linha-produtos="lily" class="linha-list__button active">
+                    <a href="#produtos-destaque">Linha Lily</a>
+                </button>
+
+            </li>
+            <li class="linha-list__item">
+                <button linha-produtos="make-b" class="linha-list__button">
+                    <a href="#produtos-destaque">Linha Make-B</a>
+                </button>
+            </li>
+            <li class="linha-list__item">
+                <button linha-produtos="mini" class="linha-list__button">
+                    <a href="#produtos-destaque">Linha Mini</a>
+                </button>
+            </li>
+        </ul>
+
+        <div linha-produtos="lily" class="product-grid">
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:eco,w_120/v1/imagens/products/B77524/Lily-Eau-de-Parfum-75ml-B77524_.jpg">
+                <div class="product__wrapper">
+                <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Lily</h3>
+                    <h3 class="product__title">Eau de Parfum 75ml </h3>
+                    <p class="product__price">R$269,90</p>
+                    <p class="product__text"> 
+                        Fragrância feminina romântica que traz o encanto dos Lírios em uma nova embalagem cheia de sofisticação.
+                    </p>
+                </div>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_297,f_auto,fl_progressive,q_auto:eco,w_120/v1/imagens/products/B48060/LILY-CR-ACET-CPO_V8_B48060_Frontal.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Lily</h3>
+                    <h3 class="product__title">Creme Acetinado Hidratante Desodorante Corporal Lumière 250g </h3>
+                    <p class="product__price">R$109,90</p>
+                    <p class="product__text"> O Creme Acetinado Hidratante Desodorante Corporal Lily Lumière é a combinação ideal de perfumação prolongada com a fragrância marcante e intensa de Lily Lumière.
+                    </div>
+                </p>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B54896/77375efa-9294-43f7-aa5e-5a9ed93f5bfa-bot-54896-lily-creme-banh-acetinado-frontal-01.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Lily</h3>
+                    <h3 class="product__title">Creme de Banho Acetinado 250ml </h3>
+                    <p class="product__price">R$89,90</p>
+                    <p class="product__text"> 
+                        O creme com toque acetinado de Lily entrega, além de hidratação, perfumação e autocuidado durante o banho.
+                    </p>
+                </div>
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+            <div class="product__card">
+                <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>
+                <img class="product__image" alt="" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_100,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B2024040622/a5b9ac4a-4230-4e3e-b792-8858352906d1-bot-2024040622-maes-lily-perfume-edp-creme-acetinado-hidratante.jpg">
+                 <div class="product__wrapper"> 
+                    <span class="product__label">Compre e leve brinde</span>
+                    <h4 class="product__brand">Lily</h3>
+                    <h3 class="product__title">Combo Lily: Eau de Parfum 75ml + Creme Acetinado Hidratante Desodorante 250g</h3>
+                    <p class="product__price">R$379,80</p>
+                    <p class="product__text">
+                         Mulheres delicadas também podem ser fortes e este combo traz produtos que traduzem esta essência.
+                    </p>
+                </div>    
+                <button class="product__button-buy">Comprar</i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-links">
+		<div class=footer__content-wrapper>
+			<div class="footer__container">
+					<div class="footer__content-container">
+						<h3 class="footer__title">Se inscreva na nossa newsletter</h3>
+						<input type="text" class="footer__input-email" placeholder="Seu email">
+					</div>
+				<hr>
+				<div class="footer__content-container">
+					<h3 class="footer__title">Ajuda e Informação</h3>
+					<ul class="footer__links-list">
+						<li class="footer__link">
+							<i class="fa-solid fa-truck fa-xs"></i>Informações de entregas
+						</li>
+						<li class="footer__link">
+							<i class="fa-solid fa-heart fa-xs"></i>Devoluções
+						</li>
+						<li class="footer__link">
+							<i class="fa-solid fa-question fa-xs"></i>Ajuda
+						</li>
+						<li class="footer__link">
+							<i class="fa-solid fa-envelope fa-xs"></i>Contato
+						</li>
+					</ul>
+				</div>
+			</div>
+        
+			<div class="footer__container">
+				<div class="footer__content-container">
+					<h3 class="footer__title">Sobre a Loja</h3>
+					<ul class="footer__links-list">
+						<li class="footer__link"><a>Sobre nós</a></li>
+						<li class="footer__link"><a>Nossas marcas</a></li>
+						<li class="footer__link"><a>Cupons de desconto</a></li>
+						<li class="footer__link"><a>Blog</a></li>
+						<li class="footer__link"><a>Carreiras</a></li>
+					</ul>
+				</div>
+				<hr>
+				<div class="footer__content-container">
+					<h3 class="footer__title">Siga-nos nas redes sociais</h3>
+					<ul class="footer__social-list">
+						<li>
+							<a class="footer__social-link" href="#"><i class="fa-brands fa-square-youtube fa-xl" style="color:red"></i></a>
+						</li>
+						<li>
+							<a class="footer__social-link" href="#"><i class="fa-brands fa-square-instagram fa-xl"style="color:hotpink"></i></a>
+						</li>
+						<li>
+							<a class="footer__social-link" href="#"><i class="fa-brands fa-square-facebook fa-xl"style="color:darkblue"></i></a>
+						</li>
+						<li>
+							<a class="footer__social-link" href="#"><i class="fa-brands fa-square-x-twitter fa-xl"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+    <footer>
+		<h3 class="footer__message">Empresa fictícia desenvolvida para fins educacionais</h3>
+		<h3 class="footer__message">Desenvolvido com ❤ por Rayane Reis - 2024</h3>
+    </footer>
+	
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiperBanner = new Swiper('.swiper-banner', {
+        slidesPerView: 1,
+        pagination: {
+            el: ".swiper-pagination",
+        },
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		  },
+        });
+
+        const swiperCategories = new Swiper('.swiper-categories', {
+        slidesPerView: "auto",
+        pagination: {
+            el: ".swiper-pagination__categories",
+			clickable: true,
+        },
+        });
+    </script>
+</body>
+</html>
+

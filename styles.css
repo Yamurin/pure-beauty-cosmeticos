@@ -1,0 +1,40 @@
+@import url(./styles/header.css);
+@import url(./styles/banner.css);
+@import url(./styles/categories.css);
+@import url(./styles/produtos-destaques.css);
+@import url(./styles/footer.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+    --preto: #000;
+    --branco: #fff;
+    
+    --font-paragraph: "Work Sans";
+    --font-logo: "DM Serif Display";
+}
+
+section {
+	padding: 0.2em 5%;
+}
+.section-title {
+	font-size: 1.1em;
+	text-align: center;
+	font-weight: 600;
+	font-family: var(--font-paragraph);
+	margin-top: 1em;
+}
+
+/* Responsividade */
+
+@media screen and (min-width: 1024px)
+{
+	section	{
+		padding: 0.2em 15%;
+	}
+	
+	.section-title {
+		font-size: 1.5em;
+	}
+}
