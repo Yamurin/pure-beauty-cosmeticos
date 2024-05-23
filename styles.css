@@ -15,6 +15,9 @@
     --font-logo: "DM Serif Display";
 }
 
+body {
+	overflow-x: hidden;
+}
 section {
 	padding: 0.2em 5%;
 }
@@ -31,7 +34,7 @@ section {
 @media screen and (min-width: 1024px)
 {
 	section	{
-		padding: 0.2em 15%;
+		padding: 0.2em 1em;
 	}
 	
 	.section-title {

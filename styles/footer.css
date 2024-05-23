@@ -9,11 +9,12 @@ footer,
     display: flex;
     flex-wrap: wrap;
 	gap: 2em;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .footer__container {
-    flex-grow: 1;
+    min-width: 310px;
+    width: 40%;
 }
 
 .footer__content-container {

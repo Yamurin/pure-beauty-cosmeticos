@@ -17,7 +17,7 @@
 
 .slide-banner__description {
     color:dimgray;
-    padding: 2% 8%;
+    padding: 2% 8% 0 8%;
     font-family: var(--font-paragraph), sans-serif;
 }
 
@@ -48,7 +48,7 @@
     border: none;
     border-radius: 20px;
     padding: 0.5em 1.5em;
-    margin: 1em 0;
+    margin-top: 1em;
 
     i {
         color: white;
@@ -61,7 +61,7 @@
 {
     .banner {
         margin: 1em auto;
-		width: 50%;
+		width: 75%;
 		max-height: auto;
     }
 

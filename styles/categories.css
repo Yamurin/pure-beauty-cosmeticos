@@ -4,7 +4,12 @@
 	 --swiper-pagination-color: salmon;
 }
 
+.wrapper-categories{
+    justify-content: center;
+}
+
 .slide-category {
+    width: 95%;
      margin: 1em;
      flex-shrink: 1;
 }
@@ -45,8 +50,8 @@
 @media screen and (min-width: 1024px)
 {
     .category-picture {
-		width: 220px;
-		height: 270px;
+		width: 200px;
+		height: 250px;
 		margin: 0;
     }
 	
