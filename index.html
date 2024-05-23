@@ -231,28 +231,31 @@
 		<div class="swiper-pagination__categories"></div>
     </section>
 
+    <!-- Catálogo de produtos em destaque -->
     <section class="produtos-destaque" id="produtos-destaque">
         <h1 class="section-title">Confira as novidades!</h2>
 
         <ul class="destaques__linhas-list">
             <li class="linha-list__item">
-                <button linha-produtos="lily" class="linha-list__button active">
-                    <a href="#produtos-destaque">Linha Lily</a>
+                <button linha-produtos="lily" class="linha-list__button active" id="lily">
+                    <a href="#produtos-destaque">
+                        Linha Lily
+                    </a>
                 </button>
 
             </li>
             <li class="linha-list__item">
-                <button linha-produtos="make-b" class="linha-list__button">
+                <button linha-produtos="make-b" class="linha-list__button" id="make-b">
                     <a href="#produtos-destaque">Linha Make-B</a>
                 </button>
             </li>
             <li class="linha-list__item">
-                <button linha-produtos="mini" class="linha-list__button">
+                <button linha-produtos="mini" class="linha-list__button" id="mini">
                     <a href="#produtos-destaque">Linha Mini</a>
                 </button>
             </li>
         </ul>
-
+        
         <div linha-produtos="lily" class="product-grid">
             <div class="product__card">
                 <button class="product__button-heart"><i class="fa-solid fa-heart fa-xl"></i></button>

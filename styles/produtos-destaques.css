@@ -19,8 +19,12 @@
     background: none;
     border: none;
     margin: auto 0;
-    padding: 1em;
     font-size: 1.05em;
+}
+
+.linha-list__button a {
+    display: inline-block;
+    padding: 1em;
 }
 
 .linha-list__button:hover a {
