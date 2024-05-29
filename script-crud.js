@@ -4,16 +4,28 @@ const btnCarrinhoCompras = document.querySelector('.button-cart')
 
 let listaProdutosCarrinho = JSON.parse(localStorage.getItem('produtos')) || []
 
-
 function atualizarCarrinho() {
     localStorage.setItem('produtos', JSON.stringify(listaProdutosCarrinho))
 }
 
-function atualizarQuantidadeProduto(produto) {
+function mostrarCarrinhoCompras(acao) {
+    switch(acao) {
+        case 'mostrar':
+            ulCarrinhoCompras.classList.add('open')
+            break
+            case 'ocultar':
+                ulCarrinhoCompras.classList.remove('open')
+                break
+    }
+}
+
+function adicionarQuantidadeProduto(produto) {
     for(let i = 0; i < listaProdutosCarrinho.length; i++) {
         if(listaProdutosCarrinho[i].nome == produto.nome) {
             listaProdutosCarrinho[i].quantidade++
             produto.quantidade = listaProdutosCarrinho[i].quantidade
+
+            document.querySelector('.shopping-list-item-quantidade').textContent = `Quantidade: ${produto.quantidade}`
             return true
         } 
     }
@@ -40,6 +52,7 @@ function criarElementoNoCarrinho (produto) {
     pValorProduto.textContent = produto.valor
 
     const pQuantidadeProduto = document.createElement('p')
+    pQuantidadeProduto.classList.add('shopping-list-item-quantidade')
     pQuantidadeProduto.textContent = `Quantidade: ${produto.quantidade}`
 
     ulCarrinhoCompras.append(li)
@@ -64,8 +77,8 @@ btnComprarProduto.forEach((botao) => {
 
         alert('Produto adicionado ao carrinho!')
         
-        
-        if (atualizarQuantidadeProduto(produto)) {
+        if (adicionarQuantidadeProduto(produto)) {
+            debugger
             atualizarCarrinho()
             return
         } 
@@ -88,11 +101,12 @@ btnCarrinhoCompras.addEventListener('mouseover', () => {
         carrinhoTexto.textContent = `${quantidadeProdutosCarrinho} itens no carrinho`
     }
 
-    ulCarrinhoCompras.classList.add('open')
+    atualizarCarrinho()
+    mostrarCarrinhoCompras('mostrar')
 })
 
 // TODO: SE viewport menor do que X, abrir carrinho em uma aba diferente
 
-ulCarrinhoCompras.addEventListener('mouseover', () => { atualizarCarrinho(); ulCarrinhoCompras.classList.add('open')})
-ulCarrinhoCompras.addEventListener('mouseout', () => { atualizarCarrinho(); ulCarrinhoCompras.classList.remove('open')})
+ulCarrinhoCompras.addEventListener('mouseover', () => { mostrarCarrinhoCompras('mostrar') })
+ulCarrinhoCompras.addEventListener('mouseout', () => { mostrarCarrinhoCompras('ocultar') })
 
