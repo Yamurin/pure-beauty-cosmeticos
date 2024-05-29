@@ -1,10 +1,14 @@
 const btnComprarProduto = document.querySelectorAll('.product__button-buy')
 const ulProdutosCarrinho = document.querySelector('.header__shopping-list')
 const btnCarrinhoCompras = document.querySelector('.button-cart')
-const listaProdutosCarrinho = []
 
-function adicionarProdutoCarrinho (produto) {
-    listaProdutosCarrinho.push(produto)
+const listaProdutosCarrinho = JSON.parse(localStorage.getItem('produtos')) || []
+
+function atualizarCarrinho() {
+    localStorage.setItem('produtos', JSON.stringify(listaProdutosCarrinho))
+}
+
+function criarElementoNoCarrinho (produto) {
     const li = document.createElement('li')
     li.classList.add('header__shopping-list-item')
 
@@ -13,15 +17,15 @@ function adicionarProdutoCarrinho (produto) {
 
     const img = document.createElement('img')
     img.classList.add('shopping-list-item-image')
-    img.setAttribute('src', `${produto.imagem.src}`)
+    img.src = produto.imagem
 
     const pNomeProduto = document.createElement('p')
     pNomeProduto.classList.add('shopping-list-item-title')
-    pNomeProduto.textContent = produto.nome.textContent
+    pNomeProduto.textContent = produto.nome
 
     const pValorProduto  = document.createElement('p')
     pValorProduto.classList.add('shopping-list-item-price')
-    pValorProduto.textContent = produto.valor.textContent
+    pValorProduto.textContent = produto.valor
 
     ulProdutosCarrinho.append(li)
     li.append(img)
@@ -36,20 +40,25 @@ btnComprarProduto.forEach((botao) => {
         const infoProduto = botao.parentElement
 
         const produto = {
-            imagem: infoProduto.querySelector('.product__image'),
-            nome: infoProduto.querySelector('.product__title'),
-            valor: infoProduto.querySelector('.product__price'),
+            imagem: infoProduto.querySelector('.product__image').getAttribute('src'),
+            nome: infoProduto.querySelector('.product__title').textContent,
+            valor: infoProduto.querySelector('.product__price').textContent,
         }
-        adicionarProdutoCarrinho(produto)
+        criarElementoNoCarrinho(produto)
+        listaProdutosCarrinho.push(produto)
+        atualizarCarrinho()
         alert('Produto adicionado ao carrinho!')
     })
 })
 
+listaProdutosCarrinho.forEach((produto) => {
+    const elementoProduto = criarElementoNoCarrinho(produto)
+})
 
 btnCarrinhoCompras.addEventListener('click', () => {
-    ulProdutosCarrinho.classList.toggle('open')
     if (listaProdutosCarrinho.length == 0) {
         ulProdutosCarrinho.textContent = 'O carrinho está vazio'
     }
+    ulProdutosCarrinho.classList.toggle('open')
 })
 
