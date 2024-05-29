@@ -56,9 +56,13 @@ listaProdutosCarrinho.forEach((produto) => {
 })
 
 btnCarrinhoCompras.addEventListener('click', () => {
-    if (listaProdutosCarrinho.length == 0) {
-        ulProdutosCarrinho.textContent = 'O carrinho está vazio'
+    const quantidadeProdutosCarrinho = listaProdutosCarrinho.length || 'Não há'
+    const carrinhoTexto = document.querySelector('.header__shopping-list-text') 
+
+    if (quantidadeProdutosCarrinho.length != 0) {
+        carrinhoTexto.textContent = `${quantidadeProdutosCarrinho} itens no carrinho`
     }
+
     ulProdutosCarrinho.classList.toggle('open')
 })
 
