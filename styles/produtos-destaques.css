@@ -64,11 +64,15 @@
     background-color: lightgray;
     background: none;
     border-radius: 50px;
+    border: 1px lightgray solid;
 
     i {
-        font-size: 1.2em;
         color: grey;
     }
+}
+
+.product__button-heart.active i {
+    color: lightcoral;
 }
 
 .product__image {

@@ -18,9 +18,11 @@
 body {
 	overflow-x: hidden;
 }
+
 section {
 	padding: 0.2em 5%;
 }
+
 .section-title {
 	font-size: 1.1em;
 	text-align: center;
@@ -28,6 +30,11 @@ section {
 	font-family: var(--font-paragraph);
 	margin-top: 1em;
 }
+
+button:hover {
+	cursor: pointer;
+}
+
 
 /* Responsividade */
 
