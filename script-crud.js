@@ -1,12 +1,19 @@
 const btnComprarProduto = document.querySelectorAll('.product__button-buy')
 const ulCarrinhoCompras = document.querySelector('.header__shopping-list')
 const btnCarrinhoCompras = document.querySelector('.button-cart')
+const iconQuantidadeItensCarrinho = document.querySelector('#quantity-icon') 
 
+let quantidadeProdutosCarrinho = JSON.parse(localStorage.getItem('quantidadeProdutos')) || 0
 let listaProdutosCarrinho = JSON.parse(localStorage.getItem('produtos')) || []
 
 function atualizarCarrinho() {
+    atualizarQuantidadeIcon() 
     localStorage.setItem('produtos', JSON.stringify(listaProdutosCarrinho))
+    localStorage.setItem('quantidadeProdutos', JSON.stringify(quantidadeProdutosCarrinho))
+   
 }
+
+atualizarCarrinho()
 
 function mostrarCarrinhoCompras(acao) {
     switch(acao) {
@@ -24,12 +31,17 @@ function adicionarQuantidadeProduto(produto) {
         if(listaProdutosCarrinho[i].nome == produto.nome) {
             listaProdutosCarrinho[i].quantidade++
             produto.quantidade = listaProdutosCarrinho[i].quantidade
-
-            document.querySelector('.shopping-list-item-quantidade').textContent = `Quantidade: ${produto.quantidade}`
+            
+            location.reload()
+            atualizarQuantidadeIcon()
             return true
         } 
     }
     return false
+}
+
+function atualizarQuantidadeIcon() {
+    iconQuantidadeItensCarrinho.textContent = quantidadeProdutosCarrinho
 }
 
 function criarElementoNoCarrinho (produto) {
@@ -64,8 +76,10 @@ function criarElementoNoCarrinho (produto) {
 }
 
 btnComprarProduto.forEach((botao) => {
-    botao.addEventListener('click', () => {
+    botao.addEventListener('click', () => { 
         botao.classList.add('active')
+        quantidadeProdutosCarrinho++
+
         const infoProduto = botao.parentElement
 
         const produto = {
@@ -78,7 +92,6 @@ btnComprarProduto.forEach((botao) => {
         alert('Produto adicionado ao carrinho!')
         
         if (adicionarQuantidadeProduto(produto)) {
-            debugger
             atualizarCarrinho()
             return
         } 
@@ -94,14 +107,15 @@ listaProdutosCarrinho.forEach((produto) => {
 })
 
 btnCarrinhoCompras.addEventListener('mouseover', () => {
-    const quantidadeProdutosCarrinho = listaProdutosCarrinho.length || 'Não há'
+    atualizarCarrinho()
     const carrinhoTexto = document.querySelector('.header__shopping-list-text') 
 
-    if (quantidadeProdutosCarrinho.length != 0) {
+    if (quantidadeProdutosCarrinho != 0) {
         carrinhoTexto.textContent = `${quantidadeProdutosCarrinho} itens no carrinho`
+    } else {
+        carrinhoTexto.textContent = 'O carrinho está vazio'
     }
 
-    atualizarCarrinho()
     mostrarCarrinhoCompras('mostrar')
 })
 
