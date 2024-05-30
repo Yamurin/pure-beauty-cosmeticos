@@ -55,9 +55,10 @@ function criarElementoNoCarrinho (produto) {
     img.classList.add('shopping-list-item-image')
     img.src = produto.imagem
 
-    const pNomeProduto = document.createElement('p')
-    pNomeProduto.classList.add('shopping-list-item-title')
-    pNomeProduto.textContent = produto.nome
+    const aNomeProduto = document.createElement('a')
+    aNomeProduto.classList.add('shopping-list-item-title')
+    aNomeProduto.textContent = produto.nome
+    aNomeProduto.setAttribute('href', '#')
 
     const pValorProduto  = document.createElement('p')
     pValorProduto.classList.add('shopping-list-item-price')
@@ -70,7 +71,7 @@ function criarElementoNoCarrinho (produto) {
     ulCarrinhoCompras.append(li)
     li.append(img)
     li.append(div)
-    div.append(pNomeProduto)
+    div.append(aNomeProduto)
     div.append(pValorProduto)
     div.append(pQuantidadeProduto)
 }
