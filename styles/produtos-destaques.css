@@ -111,6 +111,10 @@
     margin-bottom: 1.15em;
 }
 
+.price:before {
+	content: "R$ ";
+}
+
 .product__button-buy {
     display: block;
     background: none;

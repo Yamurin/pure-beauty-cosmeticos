@@ -3,6 +3,9 @@ const ulCarrinhoCompras = document.querySelector('.header__shopping-list')
 const btnCarrinhoCompras = document.querySelector('.button-cart')
 const iconQuantidadeItensCarrinho = document.querySelector('#quantity-icon') 
 const btnFinalizarCompra = document.querySelector('.shopping-list-button')
+let textoValorTotalCarrinho = document.querySelector('.shopping-list-button__total-value')
+
+let valorTotalCarrinho = JSON.parse(localStorage.getItem('valorTotalDaCompra')) || 0
 let quantidadeProdutosCarrinho = JSON.parse(localStorage.getItem('quantidadeProdutos')) || 0
 let listaProdutosCarrinho = JSON.parse(localStorage.getItem('produtos')) || []
 
@@ -10,12 +13,15 @@ function atualizarCarrinho() {
     atualizarQuantidadeIcon() 
     localStorage.setItem('produtos', JSON.stringify(listaProdutosCarrinho))
     localStorage.setItem('quantidadeProdutos', JSON.stringify(quantidadeProdutosCarrinho))
+	localStorage.setItem('valorTotalDaCompra', JSON.stringify(valorTotalCarrinho))
 	
 	if (quantidadeProdutosCarrinho == 0) {
 		btnFinalizarCompra.classList.add('hidden')
 	} else {
 		btnFinalizarCompra.classList.remove('hidden')
 	}
+	
+	textoValorTotalCarrinho.textContent = valorTotalCarrinho.toFixed(2)
 }
 
 atualizarCarrinho()
@@ -67,6 +73,7 @@ function criarElementoNoCarrinho (produto) {
 
     const pValorProduto  = document.createElement('p')
     pValorProduto.classList.add('shopping-list-item-price')
+	pValorProduto.classList.add('price')
     pValorProduto.textContent = produto.valor
 
     const pQuantidadeProduto = document.createElement('p')
@@ -79,6 +86,18 @@ function criarElementoNoCarrinho (produto) {
     div.append(aNomeProduto)
     div.append(pValorProduto)
     div.append(pQuantidadeProduto)
+}
+
+function calcularValorFinal(produto, evento) {
+	const valorProduto = parseFloat(produto.valor.replace(/,/, '.'))
+	
+	if(evento == 'adicionar') {
+		valorTotalCarrinho += parseFloat(valorProduto)
+	} else if (evento == 'remover') {
+		valorTotalCarrinho -= parseFloat(valorProduto)
+	}
+	
+	valorTotalCarrinho = parseFloat(valorTotalCarrinho)
 }
 
 btnComprarProduto.forEach((botao) => {
@@ -94,14 +113,15 @@ btnComprarProduto.forEach((botao) => {
             valor: infoProduto.querySelector('.product__price').textContent,
             quantidade: 1
         }
-
+		
+		calcularValorFinal(produto, 'adicionar')
         alert('Produto adicionado ao carrinho!')
         
         if (adicionarQuantidadeProduto(produto)) {
             atualizarCarrinho()
             return
         } 
-        
+
         listaProdutosCarrinho.push(produto)
         criarElementoNoCarrinho(produto)
         atualizarCarrinho()
@@ -124,6 +144,7 @@ btnCarrinhoCompras.addEventListener('mouseover', () => {
 
     mostrarCarrinhoCompras('mostrar')
 })
+
 
 // TODO: SE viewport menor do que X, abrir carrinho em uma aba diferente
 
