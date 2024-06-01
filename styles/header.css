@@ -151,7 +151,7 @@ header {
 /* Carrinho de compras */
 .header__shopping-list {
     display: none;
-    padding: 1.5em;
+    padding: 1.3em;
     background-color: white;
     z-index: 3;
     position: absolute;
@@ -207,6 +207,38 @@ header {
     height: 15px;
     width: 15px;
     text-align: center;
+}
+
+.shopping-list-button {
+	font-family: var(--font-paragraph);
+	font-size: 16px;
+	display: flex;
+	border: 1px salmon solid;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 0.5em auto;
+	padding: 0;
+	width: 100%;
+}
+
+.shopping-list-button:hover .shopping-list-button__text {
+	background-color: lightsalmon;
+}
+
+.shopping-list-button__text {
+	padding: 0.5em 1em;
+	background-color: salmon;
+	color: white;
+	flex: 2;
+}
+
+.shopping-list-button__total-value {
+	padding: 0.5em 1.3em;
+	text-align: center;
+	font-weight: 600;
+	background-color: white;
+	color: salmon;
+	flex: 1;
 }
 
 /* Responsividade */

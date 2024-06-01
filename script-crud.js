@@ -2,7 +2,7 @@ const btnComprarProduto = document.querySelectorAll('.product__button-buy')
 const ulCarrinhoCompras = document.querySelector('.header__shopping-list')
 const btnCarrinhoCompras = document.querySelector('.button-cart')
 const iconQuantidadeItensCarrinho = document.querySelector('#quantity-icon') 
-
+const btnFinalizarCompra = document.querySelector('.shopping-list-button')
 let quantidadeProdutosCarrinho = JSON.parse(localStorage.getItem('quantidadeProdutos')) || 0
 let listaProdutosCarrinho = JSON.parse(localStorage.getItem('produtos')) || []
 
@@ -10,7 +10,12 @@ function atualizarCarrinho() {
     atualizarQuantidadeIcon() 
     localStorage.setItem('produtos', JSON.stringify(listaProdutosCarrinho))
     localStorage.setItem('quantidadeProdutos', JSON.stringify(quantidadeProdutosCarrinho))
-   
+	
+	if (quantidadeProdutosCarrinho == 0) {
+		btnFinalizarCompra.classList.add('hidden')
+	} else {
+		btnFinalizarCompra.classList.remove('hidden')
+	}
 }
 
 atualizarCarrinho()
