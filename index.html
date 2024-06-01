@@ -126,6 +126,11 @@
 						000,00
 					</div>
 				</button>
+				<div class="shopping-list__wrapper"></div>
+				<button class="shopping-list-button__clear hidden">
+					<i class="fa-solid fa-trash"></i>
+					Remover todos os itens do carrinho
+				</button>
             </ul>
         </div>
         <div class="header-message">
@@ -406,7 +411,7 @@
         });
 
         const swiperCategories = new Swiper('.swiper-categories', {
-        slidesPerView: 4,
+        slidesPerView: "auto",
         centerInsufficientSlides: true,
         pagination: {
             el: ".swiper-pagination__categories",

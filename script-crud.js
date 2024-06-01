@@ -1,8 +1,10 @@
 const btnComprarProduto = document.querySelectorAll('.product__button-buy')
 const ulCarrinhoCompras = document.querySelector('.header__shopping-list')
+const carrinhoTexto = document.querySelector('.header__shopping-list-text') 
 const btnCarrinhoCompras = document.querySelector('.button-cart')
 const iconQuantidadeItensCarrinho = document.querySelector('#quantity-icon') 
 const btnFinalizarCompra = document.querySelector('.shopping-list-button')
+const btnLimparCarrinho = document.querySelector('.shopping-list-button__clear')
 let textoValorTotalCarrinho = document.querySelector('.shopping-list-button__total-value')
 
 let valorTotalCarrinho = JSON.parse(localStorage.getItem('valorTotalDaCompra')) || 0
@@ -15,12 +17,6 @@ function atualizarCarrinho() {
     localStorage.setItem('quantidadeProdutos', JSON.stringify(quantidadeProdutosCarrinho))
 	localStorage.setItem('valorTotalDaCompra', JSON.stringify(valorTotalCarrinho))
 	
-	if (quantidadeProdutosCarrinho == 0) {
-		btnFinalizarCompra.classList.add('hidden')
-	} else {
-		btnFinalizarCompra.classList.remove('hidden')
-	}
-	
 	textoValorTotalCarrinho.textContent = valorTotalCarrinho.toFixed(2)
 }
 
@@ -30,6 +26,17 @@ function mostrarCarrinhoCompras(acao) {
     switch(acao) {
         case 'mostrar':
             ulCarrinhoCompras.classList.add('open')
+			
+			if (quantidadeProdutosCarrinho != 0) {
+				carrinhoTexto.textContent = `${quantidadeProdutosCarrinho} itens no carrinho`
+				btnFinalizarCompra.classList.remove('hidden')
+				btnLimparCarrinho.classList.remove('hidden')
+			} else {
+				carrinhoTexto.textContent = 'O carrinho está vazio'
+				btnFinalizarCompra.classList.add('hidden')
+				btnLimparCarrinho.classList.add('hidden')
+			}
+
             break
             case 'ocultar':
                 ulCarrinhoCompras.classList.remove('open')
@@ -79,8 +86,9 @@ function criarElementoNoCarrinho (produto) {
     const pQuantidadeProduto = document.createElement('p')
     pQuantidadeProduto.classList.add('shopping-list-item-quantidade')
     pQuantidadeProduto.textContent = `Quantidade: ${produto.quantidade}`
-
-    ulCarrinhoCompras.append(li)
+	
+	const wrapper = document.querySelector('.shopping-list__wrapper')
+    wrapper.append(li)
     li.append(img)
     li.append(div)
     div.append(aNomeProduto)
@@ -132,21 +140,22 @@ listaProdutosCarrinho.forEach((produto) => {
     const elementoProduto = criarElementoNoCarrinho(produto)
 })
 
-btnCarrinhoCompras.addEventListener('mouseover', () => {
+btnCarrinhoCompras.addEventListener('mouseover' || 'click', () => {
     atualizarCarrinho()
-    const carrinhoTexto = document.querySelector('.header__shopping-list-text') 
-
-    if (quantidadeProdutosCarrinho != 0) {
-        carrinhoTexto.textContent = `${quantidadeProdutosCarrinho} itens no carrinho`
-    } else {
-        carrinhoTexto.textContent = 'O carrinho está vazio'
-    }
-
     mostrarCarrinhoCompras('mostrar')
 })
 
+btnLimparCarrinho.addEventListener('click', () => {
+	console.log('limpando')
+	document.querySelectorAll('.header__shopping-list-item').forEach((produto) => {
+		produto.remove()
+	})
+	listaProdutosCarrinho = []
+	valorTotalCarrinho = 0
+	quantidadeProdutosCarrinho = 0
+	atualizarCarrinho()
+})
 
-// TODO: SE viewport menor do que X, abrir carrinho em uma aba diferente
 
 ulCarrinhoCompras.addEventListener('mouseover', () => { mostrarCarrinhoCompras('mostrar') })
 ulCarrinhoCompras.addEventListener('mouseout', () => { mostrarCarrinhoCompras('ocultar') })
